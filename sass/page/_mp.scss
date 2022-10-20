@@ -1,0 +1,435 @@
+/////////////////////////////////////////////////////////以下為demo範例///
+// 首頁區塊設定
+// more按鈕
+a.more {
+    display: block;
+    width: 10em;
+    text-align: center;
+    height: 2.5em;
+    margin: .5em auto .5em;
+    line-height: 2.5;
+    color: $primaryColor;
+    border: 1px solid $primaryColor;
+    text-align: center;
+    overflow: hidden;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px transparent;
+    position: relative;
+    -webkit-transition-property: color;
+    transition-property: color;
+    -webkit-transition-duration: 0.2s;
+    transition-duration: 0.2s;
+    &:after {
+        content: "";
+        width: 12px;
+        height: 12px;
+        border: 2px solid #FFF;
+        transform: rotate(45deg);
+        position: absolute;
+        right: -10px;
+        top: 14px;
+        border-left: none;
+        border-bottom: none;
+        transition: .3s ease-out;
+    }
+    &:before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: $primaryColor;
+        -webkit-transform: scale(0);
+        transform: scale(0);
+        -webkit-transition-property: transform;
+        transition-property: transform;
+        -webkit-transition-duration: 0.2s;
+        transition-duration: 0.2s;
+        -webkit-transition-timing-function: ease-out;
+        transition-timing-function: ease-out;
+    }
+    &:hover,
+    &:focus,
+    &.active {
+        color: white;
+        &:before {
+            -webkit-transform: scale(1);
+            transform: scale(1);
+        }
+        &:after {
+            right: 15px;
+        }
+    }
+}
+
+.main_vision {
+    position: relative;
+    padding-top: 50px;
+    // background: url(../images/mpbanner.jpg) center bottom no-repeat;
+    // background-size: cover;
+    .mpBanner {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    >.container {
+        display: flex;
+        justify-content: flex-end;
+        z-index: 1;
+    }
+    .loginBlock {
+        margin: 35px 0;
+        max-width: 580px;
+        p {
+            color: #fff;
+            font-size: .875em;
+            margin: 0 0 1em 0;
+        }
+        .tabSet {
+            padding: 30px 25px;
+            background-color: rgba(255, 255, 255, .9);
+            @include screen('mobile') {
+                padding: 20px 15px;
+            }
+            .tabItems {
+                .item {
+                    color: #fff;
+                    flex-basis: 50%;
+                    background: $primaryColor;
+                    &.active {
+                        background: $secondaryColor;
+                    }
+                }
+            }
+        }
+        .tabContent {
+            padding-bottom: 0;
+            .btn_grp {
+                padding: 0;
+                margin: .5em -0.2em 0 6.05em;
+                display: flex;
+                @include screen('mobile') {
+                    margin: .5em -0.2em;
+                }
+                .btn {
+                    margin: 0 .2em;
+                    flex-basis: calc(50% - .4em);
+                    background: $color-darkgray;
+                    color: #fff;
+                    padding: .6em 1em;
+                }
+            }
+        }
+        .form_grp {
+            display: flex;
+            @include screen('mobile') {
+                flex-wrap: wrap;
+            }
+            .form_title {
+                flex-basis: 6.25em;
+                font-weight: bold;
+                padding: 10px 15px 10px 0;
+                text-align: right;
+                @include screen('mobile') {
+                    flex-basis: 100%;
+                    text-align: left;
+                    padding: 0;
+                }
+            }
+            .form_content {
+                flex-basis: calc(100% - 6.25em);
+                @include screen('mobile') {
+                    flex-basis: 100%;
+                }
+                input {
+                    margin: .3em 0;
+                    width: 100%;
+                }
+                .password_toggle {
+                    input {
+                        margin-right: 3em;
+                        padding: .5em;
+                        @include screen('mobile') {
+                            margin-right: 2.6em;
+                        }
+                    }
+                }
+                &.form_inline {
+                    input {
+                        width: auto;
+                        flex: 1 1 auto;
+                    }
+                    .btn-renew {
+                        margin: .3em 0;
+                        padding: .5em 1.8em;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.news {
+    padding: 45px 0;
+    .container {
+        display: flex;
+        align-items: center;
+        padding: 0 15px;
+        @include screen('mobile') {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+    }
+    .tabSet {
+        overflow: hidden;
+        position: relative;
+        flex-basis: 80%;
+        background-color: #fff;
+        padding: 50px 40px 50px 80px;
+        margin-left: -30px;
+        min-height: 390px;
+        box-shadow: rgba(0, 0, 0, 0.2) 0px 15px 40px;
+        @include screen('mobile') {
+            flex-basis: 100%;
+            padding: 50px 40px 40px;
+            margin-left: 0;
+            min-height: auto;
+        }
+        @include screen('xs_mobile') {
+            padding: 30px 15px 20px;
+        }
+        &::before {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            left: -280px;
+            bottom: -190px;
+            background: radial-gradient(circle, rgba($color-green4, 1) 0%, rgba($color-green4, 0) 65%);
+            @include screen('xs_mobile') {
+                left: -330px;
+                bottom: -250px;
+            }
+        }
+        .tabItems {
+            .item {
+                background: transparent;
+                color: $color-word;
+                border-bottom: 3px solid #d3d3d3;
+                border-radius: 0;
+                height: 3.2em;
+                font-weight: bold;
+                font-size: 1.125em;
+                &.active {
+                    border-color: $color-green2;
+                }
+            }
+        }
+        .tabContent {
+            padding: 5px 0;
+        }
+    }
+    .title_h2 {
+        position: relative;
+        color: #fff;
+        z-index: 1;
+        width: 230px;
+        text-align: center;
+        @include screen('tablet') {
+            width: 200px;
+        }
+        @include screen('mobile') {
+            width: 80%;
+            min-width: 200px;
+        }
+        &::before {
+            content: "";
+            display: block;
+            position: absolute;
+            left: 0;
+            top: calc(50% - 141px);
+            z-index: -1;
+            width: 100%;
+            height: 282px;
+            background: linear-gradient(315deg, rgba(2, 70, 107, 1) 0%, rgba(13, 95, 118, 1) 50%, rgba(37, 128, 75, 1) 100%);
+            @include screen('mobile') {
+                height: 120px;
+                top: calc(50% - 60px);
+            }
+        }
+    }
+    table {
+        th.date {
+            width: 33.33333%;
+        }
+        td.date {
+            text-align: center;
+            font-family: 'Times New Roman', sans-serif;
+            color: $color-word3;
+            font-weight: bold;
+            @include screen('xs_mobile') {
+                text-align: left;
+            }
+        }
+        td {
+            a {
+                color: $color-word2;
+                &:hover {
+                    color: $aHover;
+                }
+            }
+        }
+    }
+}
+
+.agencyArea {
+    background: url(../images/bg01.jpg) top left no-repeat;
+    padding: 210px 0 90px 0;
+    @include screen('mobile') {
+        background-size: 250%;
+        padding: 30% 0 30px 0;
+    }
+    .title_h2 {
+        text-align: center;
+    }
+    .area_list {
+        position: relative;
+        padding: 30px 60px;
+        background-color: #fff;
+        overflow: hidden;
+        box-shadow: rgba(0, 0, 0, 0.2) 0px 15px 40px;
+        @include screen('mobile') {
+            padding: 20px;
+        }
+        &::before {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            right: -300px;
+            bottom: -300px;
+            background: radial-gradient(circle, rgba($color-green4, 0.6) 0%, rgba($color-green4, 0) 65%);
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 2em;
+            @include screen('mobile') {
+                margin-top: 0;
+            }
+        }
+        li {
+            display: flex;
+            align-items: flex-start;
+            border-bottom: 1px solid #d3d3d3;
+            padding: 1.25em 0;
+            @include screen('mobile') {
+                flex-wrap: wrap;
+            }
+            &:last-of-type {
+                border-bottom: none;
+                padding-bottom: 0;
+            }
+            &:nth-of-type(3n+1) {
+                .area {
+                    background-color: $primaryColor;
+                }
+            }
+            &:nth-of-type(3n+2) {
+                .area {
+                    background-color: $secondaryColor;
+                }
+            }
+            &:nth-of-type(3n+3) {
+                .area {
+                    background-color: $color-orange;
+                }
+            }
+            .agency {
+                flex-basis: 30%;
+                margin-right: 20px;
+                text-align: right;
+                font-weight: bold;
+                padding: .6em 0;
+                @include screen('mobile') {
+                    flex-basis: 100%;
+                    text-align: left;
+                }
+            }
+            .area {
+                flex-basis: 75px;
+                color: #fff;
+                padding: .6em .5em;
+                text-align: center;
+                margin-right: 15px;
+            }
+            .infoGrp {
+                @include screen('mobile') {
+                    flex-basis: calc(100% - 100px);
+                }
+                @include screen('xs_mobile') {
+                    flex-basis: 100%;
+                }
+            }
+            .cities {
+                padding: .6em 0;
+                margin-bottom: .5em;
+            }
+            .address,
+            .tel {
+                position: relative;
+                margin-bottom: .5em;
+                padding-left: 25px;
+                &::before {
+                    content: "";
+                    display: block;
+                    width: 20px;
+                    height: 20px;
+                    position: absolute;
+                    left: 0;
+                    top: calc(50% - 10px);
+                }
+            }
+            .address {
+                &::before {
+                    background: url(../images/basic/icon_location.svg) center no-repeat;
+                    background-size: contain;
+                }
+            }
+            .tel {
+                &::before {
+                    background: url(../images/basic/icon_phone.svg) center no-repeat;
+                    background-size: contain;
+                }
+            }
+        }
+    }
+}
+
+.contact {
+    background: $color-green5 url(../images/bg02.jpg) right top no-repeat;
+    padding: 120px 0;
+    font-family: 'Century Gothic';
+    @include screen('mobile') {
+        background-size: cover;
+        padding: 80px 0;
+    }
+    .container {
+        padding: 0 45px;
+        @include screen('xs_mobile') {
+            padding: 0 15px;
+        }
+        p {
+            margin: .5em 0;
+        }
+    }
+}
