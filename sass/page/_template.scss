@@ -68,9 +68,10 @@ body {
 ////////////////////////////////////////////////////////////
 // 為了與首頁區隔，請在內頁加上innerpage ClassName
 .innerpage {
+    background: #fff;
+    padding-bottom: 1em;
     >.container {
         @include gutter(); //gutter 代表左右要留白
-        display: flex;
     }
     .center_block {
         flex: none;
@@ -109,6 +110,19 @@ body {
     &.large_size {
         font-size: 1.125em;
     }
+    .title_h2 {
+        display: inline-block;
+        color: #fff;
+    }
+}
+
+.innerpage_top {
+    background: url(../images/innerpage_banner.jpg) center no-repeat;
+    background-size: cover;
+    min-height: 190px;
+    padding-top: 50px;
+    margin-bottom: 1.5em;
+    .container {}
 }
 
 .hidden {

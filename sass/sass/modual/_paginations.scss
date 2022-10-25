@@ -1,11 +1,11 @@
 .pagination {
-    margin: .5em auto;
+    margin: 1em auto;
     padding: 0;
     display: block;
     text-align: center;
     font-size: .938em;
     @extend %clearfix; // outline: 1px solid red;
-    .form_inline{
+    .form_inline {
         justify-content: center;
     }
     span {
@@ -16,15 +16,14 @@
         margin: 10px auto;
         padding: 0;
         display: flex;
-        justify-content:center;
-        flex-wrap:wrap;
+        justify-content: center;
+        flex-wrap: wrap;
         li {
             min-width: 40px;
             height: 40px;
             margin: 2px;
             list-style: none;
-            flex:0 0 40px;
-
+            flex: 0 0 40px;
             box-sizing: border-box;
             a {
                 border-radius: 5px;
@@ -70,8 +69,10 @@
                 a {
                     text-indent: -9999px;
                     position: relative;
-                    &:hover, &:focus {
-                        &:before, &:after {
+                    &:hover,
+                    &:focus {
+                        &:before,
+                        &:after {
                             border: 2px solid #FFF;
                             border-left: none;
                             border-bottom: none;
@@ -129,7 +130,7 @@
                 margin: 0px;
             }
         }
-        .btn{
+        .btn {
             min-width: auto;
             padding: .4em 1em !important;
         }
@@ -154,7 +155,6 @@
     .items {
         display: inline-block;
         vertical-align: middle;
-        
         a {
             padding: 0 5px;
             color: $primaryColor;
@@ -162,6 +162,7 @@
         }
     }
 }
+
 @include screen('mobile') {
     .pagination .total select.form-control {
         margin: 0px 0px;

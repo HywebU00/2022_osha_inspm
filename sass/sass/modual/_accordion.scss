@@ -1,20 +1,74 @@
 .accordion {
+    margin-bottom: 1.5em;
     ul {
-        list-style: none;
+        @include li-reset;
         li {
-            margin-bottom: 0.5em;
             a {
+                position: relative;
                 display: block;
-                background-color: #21baff;
-                color: #fff;
                 text-decoration: none;
-                padding: 5px;
+                padding: 1.5em;
+                @include aSetting_nocolor;
+                transition: .2s all;
+                @include screen('mobile') {
+                    padding: 1.5em 1em;
+                }
+                &::after {
+                    content: "";
+                    position: absolute;
+                    bottom: 1px;
+                    left: 1.5em;
+                    display: block;
+                    height: 1px;
+                    width: calc(100% - 3em);
+                    margin: 0 auto;
+                    background: #d2d2d2;
+                }
+                &:hover,
+                &.active {
+                    background: rgba(#dadada, .22);
+                }
             }
         }
     }
     .accordion-content {
         line-height: 1.45em;
-        padding: 5px 0;
+        padding: 1.5em;
+        background: rgba(#dadada, .22);
+        @include screen('mobile') {
+            padding: 1.5em 1em;
+        }
+    }
+    .question,
+    .answer {
+        display: flex;
+        align-items: flex-start;
+        &::before {
+            content: "Q";
+            display: flex;
+            width: 30px;
+            height: 30px;
+            flex: 0 0 30px;
+            border-radius: 50%;
+            background: $secondaryColor;
+            color: #fff;
+            font-weight: bold;
+            justify-content: center;
+            align-items: center;
+            margin: -3px 6px 0 0;
+        }
+        time {
+            display: inline-block;
+            margin: 0 5px;
+            color: $color-word3;
+            font-family: 'Century Gothic';
+            flex: 0 0 auto;
+        }
+    }
+    .answer {
+        &::before {
+            content: "A";
+            background: $primaryColor;
+        }
     }
 }
-// 

@@ -1,5 +1,5 @@
 // 可設定背景顏色
-$sidebar_bgColor: saturate(darken($primaryColor, 18), 20);
+$sidebar_bgColor: saturate(darken($primaryColor, 10), 20);
 // 選色參考：https://sassme.jim-nielsen.com/
 $menuItems: 15;
 // 行動版選單sidebar
@@ -16,12 +16,11 @@ $menuItems: 15;
     -webkit-overflow-scrolling: touch;
     -webkit-transform: translate3d(0, 0, 0);
     box-sizing: border-box;
-
     .menu,
     .megamenu {
         display: block;
     }
-    > .menu_overlay {
+    >.menu_overlay {
         background: RGBA(0, 0, 0, 0.5);
         position: fixed;
         top: 0;
@@ -53,8 +52,8 @@ $menuItems: 15;
         &.open {
             .menu,
             .megamenu {
-                & > ul {
-                    & > li {
+                &>ul {
+                    &>li {
                         transform: scale(1) translateX(0px);
                         opacity: 1;
                         @for $i from 1 through $menuItems {
@@ -78,8 +77,8 @@ $menuItems: 15;
                 transition: 0.3s $cubic;
                 text-align: left;
             }
-            & > ul {
-                & > li {
+            &>ul {
+                &>li {
                     transform: scale(1.15) translateX(-30px);
                     opacity: 0;
                     transition: transform 0.5s $cubic, opacity 0.6s $cubic;
@@ -97,14 +96,14 @@ $menuItems: 15;
                 li {
                     flex: 1 1 100%;
                     flex-direction: row;
-                    > a {
+                    >a {
                         padding: 0.5em 1em;
                         min-height: 2em;
                         line-height: 2em;
                         border-bottom: 1px solid rgba(255, 255, 255, 0.15);
                     }
                     &.hasChild {
-                        > a {
+                        >a {
                             position: relative;
                             padding: 0.5em 2em 0.5em 1em;
                             color: #fff;
@@ -140,11 +139,10 @@ $menuItems: 15;
                                 padding: 0.5em 1em 0.5em 2em !important;
                                 border: none;
                                 &:hover,
-                                &:focus {
-                                }
+                                &:focus {}
                             }
                             &.hasChild {
-                                > a {
+                                >a {
                                     padding: 0.5em 1em 0.5em 2em !important;
                                     &:after {
                                         top: 0.85em;
@@ -155,8 +153,7 @@ $menuItems: 15;
                                 a {
                                     padding: 0.5em 1em 0.5em 4em !important;
                                     &:hover,
-                                    &:focus {
-                                    }
+                                    &:focus {}
                                     &:after {
                                         display: none;
                                     }
@@ -192,7 +189,7 @@ $menuItems: 15;
                 a {
                     display: block;
                     line-height: 1.5em;
-                    padding: 0.25em 0.5em 0.25em 1.1em;
+                    padding: 0.5em 0.5em 1.1em;
                     font-size: 0.875em;
                     color: #fff;
                     font-weight: normal;

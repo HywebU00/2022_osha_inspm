@@ -190,10 +190,10 @@
 }
 
 
-/* ---點的樣式---*/
+/* ---點的位置、大小、顏色---*/
 
-// slick dots 
 .slick-dots {
+    /* 位置距離 */
     position: absolute;
     right: 0;
     left: 0;
@@ -205,26 +205,6 @@
     z-index: 9;
     list-style: none;
     box-sizing: border-box;
-    li {
-        position: relative;
-        padding: 0;
-        cursor: pointer;
-        button {
-            font-size: 0em;
-            line-height: 0em;
-            display: block;
-            cursor: pointer;
-            border: 0;
-            outline: none;
-        }
-    }
-}
-
-
-/* ---點的位置、大小、顏色---*/
-
-.slick-dots {
-    /* 位置距離 */
     bottom: 20px;
     li {
         /* 兩點的距離 */
@@ -236,17 +216,22 @@
             width: 15px;
             height: 15px;
             border-radius: 50%;
-            &:hover,
-            &:focus {
+            &:hover {
                 opacity: 1;
                 /* 點hover的顏色 */
-                background: #21baff;
+                background: $aHover;
+                &::before {
+                    background: $aHover;
+                }
             }
             &:focus {
                 opacity: 1;
                 /* 點focus的顏色 */
-                background: #ff3e4d;
+                background: $aFocus;
                 // box-shadow: 0px 0px 0px 1px #ff3e4d; /* 讓focus過去的點大一些 */
+                &::before {
+                    background: $aFocus;
+                }
             }
         }
         &.slick-active {
@@ -256,11 +241,20 @@
                 background: $aHover;
                 &:hover {
                     /* 點 active  hover的顏色 */
-                    background: #ff3e4d;
+                    background: $aHover;
+                    &::before {
+                        background: $aHover;
+                    }
                 }
                 &:focus {
                     /* 點 active  focus的顏色 */
-                    background: #ff3e4d;
+                    background: $aFocus;
+                    &::before {
+                        background: $aFocus;
+                    }
+                }
+                &:before {
+                    background: $aFocus;
                 }
             }
         }

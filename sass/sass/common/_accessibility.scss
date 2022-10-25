@@ -10,12 +10,20 @@ a:focus-visible {
 
 // 導盲磚
 .accesskey {
+    // position: absolute;
+    // top: 5px;
+    // left: 5px;
+    // z-index: 9;
+    // color: $color-word;
+    // font-size: $font-size;
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
     position: absolute;
-    top: 5px;
-    left: 5px;
-    z-index: 9;
-    color: $color-word;
-    font-size: $font-size;
     @include screen("mobile") {
         display: none;
     }

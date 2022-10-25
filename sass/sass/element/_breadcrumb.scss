@@ -1,8 +1,8 @@
 .breadcrumb {
-    border-bottom: 1px solid #EEE;
     padding: .1em 0em .1em;
     font-size: .813em;
     margin: 0px auto 5px;
+    color: #fff;
     ul {
         @include li-reset;
         li {
@@ -14,13 +14,13 @@
             &:first-child:before {
                 content: "";
                 display: inline-block;
-                color: #666;
+                color: #fff;
                 margin-left: 0;
                 padding: 0;
             }
         }
     }
     a {
-        @include aSetting_nocolor;
+        color: #fff;
     }
 }

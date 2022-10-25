@@ -5,28 +5,29 @@
     ul {
         @include li-reset;
         li {
-            margin: 0px 3px 3px 0px;
+            margin: 0px 5px 5px 0px;
             display: block;
             float: left;
         }
     }
     a {
-        border: 1px solid #CCC;
-        padding: .4em 1em;
+        font-size: .875em;
+        padding: .5em 1.2em;
         display: block;
-        color: #333;
+        color: #535353;
         box-sizing: border-box;
-        border-radius:4px;
+        border-radius: 30px;
+        background: rgba(#b5b5b5, .3);
         &:hover,
         &:focus {
+            transition: .2s;
             color: #FFF;
-            background: darken($primaryColor, 15);
-            border: 1px solid darken($primaryColor, 15);
+            background: #858585;
             box-shadow: none;
         }
         &.active {
             color: #FFF;
-            @include gradient(darken($primaryColor, 0), darken($primaryColor, 15), vertical);
+            background: #535353;
         }
         span {
             font-size: .813em;
