@@ -17,6 +17,8 @@
     <link rel="stylesheet" type="text/css" href="vendor/slick/slick-theme.css" />
     <!-- 燈箱facybox -->
     <link rel="stylesheet" type="text/css" href="vendor/fancybox/jquery.fancybox.min.css">
+    <!-- animate -->
+    <link rel="stylesheet" href="css/animate.css">
     <!-- hyUI css -->
     <link rel="stylesheet" href="css/style.css">
     <!-- favicon -->
@@ -172,7 +174,7 @@
             </section>
             <section class="news">
                 <div class="container">
-                    <h2 class="title_h2">消息公告</h2>
+                    <h2 class="title_h2 wow flipInY" data-wow-delay="1s">消息公告</h2>
                     <div class="tabSet">
                         <div class="tabItems">
                             <button class="item">法規公告</button>
@@ -255,7 +257,7 @@
             </section>
             <section class="agencyArea">
                 <div class="container">
-                    <div class="area_list">
+                    <div class="area_list wow fadeInDown">
                         <h2 class="title_h2">代檢機構責任轄區表</h2>
                         <ul>
                             <li>
@@ -351,10 +353,16 @@
     <!-- scrolltable -->
     <script src='vendor/fancybox/jquery.fancybox.min.js'></script>
     <!-- fancy -->
-    <!-- hyUI -->
+    <script src="vendor/wow/wow.min.js"></script>
+    <!-- wow js -->
+    <script>
+        new WOW().init();
+    </script>
     <script src="js/hyui.js"></script>
-    <!-- 客製js -->
+    <!-- hyUI -->
     <script src="js/customize.js"></script>
+    <!-- 客製js -->
+
 </body>
 
 </html>
