@@ -103,6 +103,9 @@ a.more {
                     color: #fff;
                     flex-basis: 50%;
                     background: $primaryColor;
+                    &:hover {
+                        background: darken($primaryColor, 10);
+                    }
                     &.active {
                         background: $secondaryColor;
                     }
@@ -124,6 +127,9 @@ a.more {
                     background: $color-darkgray;
                     color: #fff;
                     padding: .6em 1em;
+                    &:hover {
+                        background: $color-dark;
+                    }
                 }
             }
         }
@@ -228,6 +234,10 @@ a.more {
                 height: 3.2em;
                 font-weight: bold;
                 font-size: 1.125em;
+                transition: .2s all;
+                &:hover {
+                    border-color: $color-green4;
+                }
                 &.active {
                     border-color: $color-green2;
                 }

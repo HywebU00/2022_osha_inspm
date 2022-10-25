@@ -113,7 +113,8 @@
                 background: #379;
                 color: #fff;
             }
-            &:focus {
+            &:focus-visible {
+                outline: none;
                 box-shadow: inset 0px 0px 0px 2px $color-yellow;
             }
         }
