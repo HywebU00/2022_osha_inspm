@@ -122,7 +122,9 @@ body {
     min-height: 190px;
     padding-top: 50px;
     margin-bottom: 1.5em;
-    .container {}
+    @include screen("mobile") {
+        padding-top: 60px;
+    }
 }
 
 .hidden {
